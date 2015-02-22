@@ -1,0 +1,5 @@
+*.vtk
+*.aux
+*.log
+*.gz
+*.pdf

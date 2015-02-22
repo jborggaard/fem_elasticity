@@ -1,0 +1,48 @@
+\documentclass[11pt]{amsart}
+
+\usepackage{geometry}
+
+% Activate below to begin paragraphs with an empty line rather than an indent
+%\usepackage[parfill]{parskip}    
+
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\title{Elasticity Problems}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Lam\'e Equtions}
+Find $u$ that solves
+%
+\begin{displaymath}
+  -\nabla\cdot \sigma(u) = f
+\end{displaymath}
+%
+subject to $\sigma(u)\cdot\hat{n} = t$ on $\Gamma_N$ and $u=u_D$ on $\Gamma_D$, where
+%
+\begin{displaymath}
+  \sigma(u) = 2\mu \varepsilon(u) + \lambda \mbox{trace}(\varepsilon(u)) I,
+  \qquad
+  \epsilon(u) = \frac{1}{2}\left( \nabla u + \nabla u^T \right),
+\end{displaymath}
+%
+\begin{displaymath}
+  \lambda = \frac{\nu E}{(1+\nu)(1-2\nu)} \qquad \mbox{and} \qquad
+  \mu = \frac{E}{2(1+\nu)}
+\end{displaymath}
+%
+with $\lambda, \mu$ referred to as the Lam\'e constants.
+
+We build the weak form of the equations as
+%
+\begin{displaymath}
+  \int_\Omega \sigma(u) : \epsilon(v) d\Omega = \int_\Omega f\cdot v d\Omega
+  + \int_{\Gamma_N} t\cdot v d\Gamma.
+\end{displaymath}
+
+\end{document}  
